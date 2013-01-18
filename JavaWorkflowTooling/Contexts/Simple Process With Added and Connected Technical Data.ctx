@@ -1,0 +1,77 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Context-Type: com.xored.q7.workspace.context
+Element-Name: Simple Process With Added and Connected Technical Data
+Element-Type: context
+Element-Version: 2.0
+Id: _7Rw1MGFGEeKLnJD_2PY7ug
+Save-Time: 1/18/13 3:14 PM
+
+------=_contents/MyProject/MyModel.workflow-e7363a04-fc09-347f-9b30-65cae851ecae
+Content-Type: q7/binary
+Entry-Name: contents/MyProject/MyModel.workflow
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnSdVlFvmzAQfp+0/2D5vYakmjShZG3a
+qVKldqraVNqray6JO7CpbULy73eGQGDQrEXKA7a/++7zd8eF2cUuTcgWjJVazemEhZSAEjqWaj2nz8ub
+s+/04sfXLzOhDUT3OoaE7FIZNRFTH4Ecyka4P6cb57IoCIqiYDpdM23Wwe/72wZiu5DivERMw3CCsLsn
+sYGUn0llHVcC6iieZYkU3JUJEc9AJDKzwF4LF7QOa7zX2gf63RoRc8f7CL9bI/CMK2lLXtuHdo7rmMxo
+AdbCAL45okTxFNU9yTRL4KHapoTnbqPNnO5QZEz/KchKJtDa8ZZjSQiZ2fwl4+IPX4M90C6ObtgKhDBd
+KIivdZqCcsTBzs3pcgPEmxxzE5MDB1lpQ3ibIKgZIAEfbAkWMHL7DDO1gNGiXYNKyK1yYBS4K6MLC4YS
+Kbx6Sl65WRixkVuoVlt+nXCLlkHOIM1VrBlfywQNY6uCrYBJ5VbsQPMsKUkBrYoxuFI3C1ouvGfLo05g
+nB+mjDxlRKcVIp+p9mAJ1lXrw+U/ofin78UxgssmbvQOE3vhjR0j+Kv44EgwYIvHRT7ZEpe1I8+Pd2PC
+YqkfuMFH7Kkx8W85T+RKjgu2wLFf33Iw+zHh/uX1Tx+NbVk1mZ4f35stT3LoDM8932jNhE5pWZRlyRME
+l62as2l3GQaXdW4cIk2X9BuyvzOguRlq0UI4uZVuPzzdTraxtAR/nLxwKwXhNVGjTeF/znDSG6l48guP
+0SRV3vx4N3yO/YUnHyG6VdLJmkrn7h2u8CNc3onjFKxWkxMCw1MZMTADg29dCvHVvlfcSaeaBHYgcjeI
+7NYd1WS5s59plm+tEeilEatzI6CnuzTG63bcrKF/r+p8+im26X/Ywmau1mf+gyU4frHg8i9QSwcImL+a
+AKMCAADoCAAAUEsBAhQAFAAICAgAAAAhAJi/mgCjAgAA6AgAAAgAAAAAAAAAAAAAAAAAAAAAAC5jb250
+ZW50UEsFBgAAAAABAAEANgAAANkCAAAAAA==
+------=_contents/MyProject/MyModel.workflow-e7363a04-fc09-347f-9b30-65cae851ecae--
+------=_contents/MyProject/MyModel.workflow_conf-e5ff57f4-38fa-3034-b2c6-7b18e63c15af
+Content-Type: q7/binary
+Entry-Name: contents/MyProject/MyModel.workflow_conf
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnRVjj0LwjAQhnfB/xDO2USdJDR2EASH
+bgru6dlG01xJi6n/3oui4HJwD+9XUU6dFw+Mg6NgYC1XIDBYql1oDJxPh+UWyt18VlgKV73nU1GNXkyd
+0z/XJrs4JwyauYF2HHutVEpJUtdIio26VMevJCcZYCjRetcPKG9plJkCFwlRYIjOtlh/mtqILK+e708m
+iverp7RQoPIs9b+L0QtQSwcIl3kTPJwAAADSAAAAUEsBAhQAFAAICAgAAAAhAJd5EzycAAAA0gAAAAgA
+AAAAAAAAAAAAAAAAAAAAAC5jb250ZW50UEsFBgAAAAABAAEANgAAANIAAAAAAA==
+------=_contents/MyProject/MyModel.workflow_conf-e5ff57f4-38fa-3034-b2c6-7b18e63c15af--
+------=_contents/MyProject/.project-db7607a0-e356-3aa3-a20e-b3efc9871b2e
+Content-Type: q7/binary
+Entry-Name: contents/MyProject/.project
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnSzsa/IzVEoSy0qzszPs1Uy1DNQUkjN
+S85PycxLt1UKDXHTtVCyt+Plsikoys9KTS5xSS1OLsosKAGqBopy2uQl5qba+VYGQGRt9MF8kERyfm5u
+al6JnY0+jAUShZpSDOboo/CSSjNzUoILUpMhcqjcvMSS0qJUqDYEB24EqrMAUEsHCNSdZ4d/AAAA1QAA
+AFBLAQIUABQACAgIAAAAIQDUnWeHfwAAANUAAAAIAAAAAAAAAAAAAAAAAAAAAAAuY29udGVudFBLBQYA
+AAAAAQABADYAAAC1AAAAAAA=
+------=_contents/MyProject/.project-db7607a0-e356-3aa3-a20e-b3efc9871b2e--
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf
+Content-Type: q7/binary
+Entry-Name: .q7.content
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnSNkc1ugzAQhO+V+g4r32s3uVCh0Khq
+2qg/SFFbKe0JIXsBt2ATcAJ5+24IkEsOuXl3Ps/u2LN5W+Sww6rW1gRswm8ZoJFWaZMGbOuSmzs2v7++
+mklb8NZWqPjG442t/uoyluivh9OjNQ5bB22h/dFuerCjAab2qR+wzLnSF6JpGm6LlNsqFd/hy4CcHzHe
+EqSLThcbT4w6R0k9BiYuiP3URZkjrCorsa5hrV0GD0qhgtgooCUNSkfVF8rMaBnnsIhdzECrgEXeRzMJ
+l8/LJ3x7N6+LaLr68bYpo/gA9AAU0LiuoLKs7C9Z1f3ccL86NlgPEJLoHAed9zwT5/VwH1qFeRc7yW1z
+KRfRWsnF8E7jyXkmhgzHgOKU8HC+6LuJ/QdQSwcIU69xzSABAABCAgAAUEsBAhQAFAAICAgAAAAhAFOv
+cc0gAQAAQgIAAAgAAAAAAAAAAAAAAAAAAAAAAC5jb250ZW50UEsFBgAAAAABAAEANgAAAFYBAAAAAA==
+
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf--
+------=_contents/MyProject/MyModel.workflow_view-fcd6a632-a77f-39a6-94f8-67a1713dd347
+Content-Type: q7/binary
+Entry-Name: contents/MyProject/MyModel.workflow_view
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnTVls9vgjAUx+9L9j803XkUUBNnYHrQ
+JR68uWTXCk/shNaUKrq/fg+cv6ZM5zRmJ8rj9X2+374W8JrzJCYz0KlQ0qeOZVMCMlChkJFPX/svj3Xa
+fL6/82YCskZb8EjzhMwT0VjPcfM5WEWmDYz7dGTMpMFYlmWWSiJL6Yi99bqrlLyOTzFoQRCLSQrWe2ZY
+HqWIIcQLIQ20GEDaUyHEZKRh6NPeorizMqXHw1hlD4yyZXrMF2pq2txwkhcRoU/7EIykCHiMTJRXR3kL
+vFbqlAgpjOCx+ADMM3oKS+g2thNDAtKUglkLlhmpZbOWxKc4WKlhGzkny7u6Oud8dU51tXi1q8lzT5H3
+neBTrIUQ0Lhbiw6UOqgVDp4Oru/+JjoGcspA1UrBqVQvBHLLQK5jn0DaVCLrYSeMIN3lFCFkrToZKGm4
+kBB25UlN/MJtA3+Yl04HEx6Mec50DpTx2Eb2GTbsG9iwL2/DuYENt9xV7birQvfG2f6Z+bshHhj82pz5
+YtkV+jvxeA5DoaHA+1TI/+zlEgfksuI9tv1jgYFPUEsHCPE5D0KcAQAAkQgAAFBLAQIUABQACAgIAAAA
+IQDxOQ9CnAEAAJEIAAAIAAAAAAAAAAAAAAAAAAAAAAAuY29udGVudFBLBQYAAAAAAQABADYAAADSAQAA
+AAA=
+------=_contents/MyProject/MyModel.workflow_view-fcd6a632-a77f-39a6-94f8-67a1713dd347--

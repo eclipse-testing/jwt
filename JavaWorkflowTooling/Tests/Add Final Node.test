@@ -1,0 +1,60 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Contexts: _KgB1kGCLEeKhj7ypbQffOQ,_GoKnYGE0EeKLnJD_2PY7ug,_R9zp8GE0EeKLnJD_2PY7ug
+Element-Name: Add Final Node
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _QVsxwGE2EeKLnJD_2PY7ug
+Save-Time: 1/18/13 1:15 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+TEST STEPS
+
+1. Switch to Simple Process tab;
+2. Expand palette;
+3. Select "Final Node" and click to diagram;
+4. Verify that a final node has been added;
+5. Verify final node in Outline view. 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-editor "Overview (MyModel.workflow)" | get-tab-folder | get-tab-item SimpleProcess | click
+with [get-editor "SimpleProcess (MyModel.workflow)"] {
+    with [get-canvas] {
+        mouse-press 6 11 button1
+        mouse-move 7 10 -mask 524288
+        mouse-release 7 10 button1 524288
+    }
+    with [get-palette] {
+        get-palette-entry Select | mouse-move 115 19 -height 23 -width 125
+        get-palette-entry Marquee | mouse-move 112 14 -height 23 -width 125
+        get-palette-entry Action | mouse-move 104 18 -height 23 -width 125
+        get-palette-entry "Initial Node" | mouse-move 101 18 -height 23 -width 125
+        with [get-palette-entry "Final Node"] {
+            mouse-move 93 20 -height 23 -width 125
+            mouse-move 44 12 button1 -height 23 -width 125
+            mouse-press 44 12 button1 -height 23 -width 125
+            mouse-release 44 12 button1 524288 -height 23 -width 125
+        }
+    }
+    with [get-diagram] {
+        mouse-move 147 171 button1 -height 556 -width 359
+        mouse-press 147 171 button1 -height 556 -width 359
+        mouse-release 147 171 button1 524288 -height 556 -width 359
+    }
+    get-diagram -index 1 | get-edit-part -name SimpleProcess | get-edit-part -className FinalNodeEditPart 
+        | mouse-hover 12 12 -height 24 -width 24
+}
+get-editor "SimpleProcess (MyModel.workflow)" | get-diagram -index 1 | get-edit-part -name SimpleProcess 
+    | get-property childrenCount | equals 1 | verify-true
+get-view Outline | get-tree | get-item "Model: SimpleProcess/Activity: SimpleProcess/Final Node: " 
+    | get-property caption | equals "Final Node:" | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

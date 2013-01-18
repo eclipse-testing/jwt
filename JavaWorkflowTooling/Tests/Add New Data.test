@@ -1,0 +1,43 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Contexts: _KgB1kGCLEeKhj7ypbQffOQ,_wNmXcGE2EeKLnJD_2PY7ug,_R9zp8GE0EeKLnJD_2PY7ug
+Element-Name: Add New Data
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _XCb5EGFCEeKLnJD_2PY7ug
+Save-Time: 1/18/13 2:43 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+TEST STEPS
+
+1. In Overview editor click "New Data..." button;
+2. Select  Datatypes Package;
+3. Set data name as "URL" and click "Next" button;
+4. Set “URL” as Data Type and "http://www.yahoo.com" as a Value and press Finish button;
+4. Make sure that new data is created. 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-editor "Overview (MyModel.workflow)" | get-group Data | get-button "New Data..." | click
+with [get-window "New Data"] {
+    get-tree | select "Model: SimpleProcess/Package: Data/Package: Datatypes"
+    get-editbox -after [get-label "Name:"] | set-text URL
+    get-button "Next >" | click
+    get-combo -after [get-label "Data Type:"] | select URL
+    get-editbox -after [get-label "Value:"] | set-text "http://www.yahoo.com"
+    get-button Finish | click
+}
+get-editor "Overview (MyModel.workflow)" | get-group Data | get-tree | select "Package: Applications"
+get-editor "Overview (MyModel.workflow)" | get-group Data | get-tree 
+    | get-item "Package: Data/Package: Datatypes/Data: URL" | get-property caption | equals "Data: URL" | verify-true
+get-view Outline | get-tree | get-item "Model: SimpleProcess/Package: Data/Package: Datatypes/Data: URL" 
+    | get-property caption | equals "Data: URL" | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

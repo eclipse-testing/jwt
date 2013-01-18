@@ -1,0 +1,82 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Contexts: _KgB1kGCLEeKhj7ypbQffOQ,_Z8_70GE5EeKLnJD_2PY7ug,_R9zp8GE0EeKLnJD_2PY7ug
+Element-Name: Draw a Transition Link
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _0WAsYGE4EeKLnJD_2PY7ug
+Save-Time: 1/18/13 1:47 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+TEST STEPS
+
+1. Open Simple Process workflow diagram;
+2. Expand a palette and select "Activity Edge";
+3. Draw a link from initial node to Action1;
+4. Verify ingoing transition for Action1 in Properties view;
+5. Make sure that the transition is shown on a diagram. 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-editor "Overview (MyModel.workflow)" | get-tab-folder | get-tab-item SimpleProcess | click
+with [get-editor "SimpleProcess (MyModel.workflow)"] {
+    with [get-canvas] {
+        mouse-press 4 13 button1
+        mouse-release 4 13 button1 524288
+    }
+    with [get-palette] {
+        get-palette-entry Select | mouse-move 96 20 -height 23 -width 125
+        get-palette-entry Marquee | mouse-move 91 13 -height 23 -width 125
+        get-palette-entry Action | mouse-move 65 22 -height 23 -width 125
+        get-palette-entry "Final Node" | mouse-move 53 7 -height 23 -width 125
+        get-palette-entry Event | mouse-move 47 1 -height 23 -width 125
+        get-palette-entry "Fork Node" | mouse-move 40 21 -height 23 -width 125
+        get-palette-entry "Decision Node" | mouse-move 39 18 -height 23 -width 125
+        get-palette-entry "Merge Node" | mouse-move 40 13 -height 23 -width 125
+        get-palette-entry Guard | mouse-move 45 18 -height 23 -width 125
+        get-palette-entry "Embedded Subprocess" | mouse-move 53 34 -height 37 -width 125
+        get-palette-entry "Subprocess Call" | mouse-move 53 21 -height 23 -width 125
+        with [get-palette-entry "Activity Edge"] {
+            mouse-move 55 9 button1 -height 23 -width 125
+            mouse-press 55 9 button1 -height 23 -width 125
+            mouse-release 55 9 button1 524288 -height 23 -width 125
+            mouse-move 16 4 -height 23 -width 125
+        }
+    }
+    with [get-diagram | get-edit-part -name SimpleProcess] {
+        with [get-edit-part -className InitialNodeEditPart] {
+            mouse-move 13 12 button1 -height 24 -width 24
+            mouse-press 13 12 button1 -height 24 -width 24
+            mouse-release 13 12 button1 524288 -height 24 -width 24
+        }
+        with [get-edit-part -name Action1] {
+            mouse-move 33 15 button1 -height 29 -width 55
+            mouse-press 33 15 button1 -height 29 -width 55
+            mouse-release 33 15 button1 524288 -height 29 -width 55
+            mouse-hover 35 17 -height 29 -width 55
+        }
+    }
+    with [get-palette | get-palette-entry Select] {
+        mouse-move 32 9 button1 -height 23 -width 125
+        mouse-press 32 9 button1 -height 23 -width 125
+        mouse-release 32 9 button1 524288 -height 23 -width 125
+    }
+    with [get-diagram | get-edit-part -name SimpleProcess | get-edit-part -name Action1] {
+        mouse-move 41 16 button1 -height 29 -width 55
+        mouse-press 41 16 button1 -height 29 -width 55
+        mouse-release 41 16 button1 524288 -height 29 -width 55
+    }
+}
+get-view Properties | get-tree | get-item "Ingoing Transitions" | get-property columns -index 1 
+    | equals "Activity Edge (Initial Node:  -> Action: Action1)" | verify-true
+get-editor "SimpleProcess (MyModel.workflow)" | get-diagram -index 1 | get-edit-part -name SimpleProcess 
+    | get-edit-part -name Action1 | get-target-connection 0 
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

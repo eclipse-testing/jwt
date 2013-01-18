@@ -1,0 +1,50 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Contexts: _KgB1kGCLEeKhj7ypbQffOQ,_Z8_70GE5EeKLnJD_2PY7ug,_R9zp8GE0EeKLnJD_2PY7ug
+Element-Name: Add New Comment to Action
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _wQfEoGE8EeKLnJD_2PY7ug
+Save-Time: 1/18/13 2:07 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+TEST STEPS
+
+1. Open SimpleProcess workflow diagram;
+2. Right-click Action1 and select New Child/Comment command from a context menu;
+3. Select added comment in Outline View and set its text in Properties view;
+4. Make sure that comment has been updated. 
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-editor "Overview (MyModel.workflow)" | get-tab-folder | get-tab-item SimpleProcess | click
+with [get-editor "SimpleProcess (MyModel.workflow)" | get-diagram] {
+    with [get-edit-part -name SimpleProcess | get-edit-part -name Action1] {
+        mouse-move 32 11 button3 -height 29 -width 55
+        mouse-press 32 11 button3 -height 29 -width 55
+        mouse-release 32 11 button3 2097152 -height 29 -width 55
+    }
+    get-menu "New Child/Comment" | click
+}
+get-view Outline | get-tree | select "Model: SimpleProcess/Activity: SimpleProcess/Action: Action1/Comment: null"
+with [get-view Properties | get-tree] {
+    select Text | activate-cell-edit -column 1
+    with [get-editbox] {
+        set-text "this is a comment for Action1"
+        key-type Enter
+    }
+    apply-cell-edit
+}
+get-view Outline | get-tree 
+    | get-item "Model: SimpleProcess/Activity: SimpleProcess/Action: Action1/Comment: this is a comment for Action1" 
+    | get-property caption | equals "Comment: this is a comment for Action1" | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

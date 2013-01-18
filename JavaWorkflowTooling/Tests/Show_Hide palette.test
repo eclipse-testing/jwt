@@ -1,0 +1,43 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Contexts: _KgB1kGCLEeKhj7ypbQffOQ,_GoKnYGE0EeKLnJD_2PY7ug,_R9zp8GE0EeKLnJD_2PY7ug
+Element-Name: Show/Hide palette
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _gROoEGE7EeKLnJD_2PY7ug
+Save-Time: 1/18/13 1:56 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+TEST STEPS
+
+1. Open SimpleProcess workflow diagram;
+2. Click "Show Palette" button;
+3. Make sure that the palette is shown;
+4. Click "Hide Palette" button;
+5. Make sure that the palette is hidden. 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-editor "Overview (MyModel.workflow)" | get-tab-folder | get-tab-item SimpleProcess | click
+with [get-editor "SimpleProcess (MyModel.workflow)"] {
+    with [get-canvas] {
+        mouse-press 0 12 button1
+        mouse-release 0 12 button1 524288
+    }
+    get-palette
+    
+    with [get-canvas -index 1] {
+        mouse-press 13 17 button1
+        mouse-release 13 17 button1 524288
+    }
+    verify-error{get-palette}
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

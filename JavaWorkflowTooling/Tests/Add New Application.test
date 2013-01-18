@@ -1,0 +1,45 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Contexts: _KgB1kGCLEeKhj7ypbQffOQ,_wNmXcGE2EeKLnJD_2PY7ug,_R9zp8GE0EeKLnJD_2PY7ug
+Element-Name: Add New Application
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _WJAzMGFBEeKLnJD_2PY7ug
+Save-Time: 1/18/13 2:37 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+TEST STEPS
+
+1. In Overview editor click "New Application..." button;
+2. Select Applications Package;
+3. Set application name as "Internet Browser" and click "Next" button;
+4. Set “eu.emundo.agilpro.fw.fe.intf.BrowserUi” as Java Class and press Finish button;
+4. Make sure that new application is created. 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+with [get-editor "Overview (MyModel.workflow)" | get-group Applications] {
+    get-tree | select "Package: Applications"
+    get-button "New Application..." | click
+}
+with [get-window "New Application"] {
+    get-editbox -after [get-label "Name:"] | set-text InternetBrowser
+    get-tree | select "Model: SimpleProcess/Package: Applications"
+    get-button "Next >" | click
+    get-editbox -after [get-label "Java Class"] | set-text "eu.emundo.agilpro.fw.fe.intf.BrowserUi"
+    get-button Finish | click
+}
+get-editor "Overview (MyModel.workflow)" | get-group Applications | get-tree 
+    | get-item "Package: Applications/Application: InternetBrowser" | get-property caption 
+    | equals "Application: InternetBrowser" | verify-true
+get-view Outline | get-tree | get-item "Model: SimpleProcess/Package: Applications/Application: InternetBrowser" 
+    | get-property caption | equals "Application: InternetBrowser" | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

@@ -1,0 +1,70 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Context-Type: com.xored.q7.workspace.context
+Element-Name: Simple Workflow With 2 Actions
+Element-Type: context
+Element-Version: 2.0
+Id: _wNmXcGE2EeKLnJD_2PY7ug
+Save-Time: 1/18/13 1:17 PM
+
+------=_contents/MyProject/MyModel.workflow-e7363a04-fc09-347f-9b30-65cae851ecae
+Content-Type: q7/binary
+Entry-Name: contents/MyProject/MyModel.workflow
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnSdVVtP2zAUfp+0/2D5nThJX6aoGSAm
+JCSYEBRpr8Y5Tbw5drAd0v772Q1Ou6UEGikP9jnf5eT4tjzf1AK9gjZcyRwnUYwRSKYKLsscP62uz77h
+8+9fvyyZ0pDdqQIE2tQ8GxipZzgNaTIXz3FlbZMR0nVdpOoyUrokv+5uBoj5F9Itdog0jhMHu31kFdT0
+jEtjqWQQWN47xw4YARO8MRD97izx0YAoqKVjhI8GRKMVA2PAjGFDCiNJa+f0yOtGwH0fxoi2tlI6xxtn
+WOD/mrXmAg4ivh2uXQgtTfvcUPaHlmDeZC+bRnBGrYOaHuRgqpNQXKm6BmmRhY3N8aoC5BtQUF2gNw20
+VhrRQwHS25ADn/eMH5SAeY56xzzB6odv+Ryn3VqRwDwubLfN/j9m6Pd8shcAAZ5rkNuXmc/m2OMyb7Zy
+07Ahnh5u59AKru6pdkMLeg7/paWCr/k8sgGqWfXSgt7Ooft97Uf7NRkv/zhyRH04Xdkls/yV2+3xYza5
+abhB7qPomRrOEA1CQ23SXUzHTa+5pOKnS2PE3Qkl5CLUGMVuXLjSo/QzQjeSWx6kVGvf0Yo/o+U7oWTo
+Qz9LJgqMpxyTuY7phGMy5XjQr10AGdVqBiP0rhwvZakuYazW509TSz9QW5yktvhALR7uvpDzbyHZP4Zu
++hdQSwcIdblU9fgBAABDBwAAUEsBAhQAFAAICAgAAAAhAHW5VPX4AQAAQwcAAAgAAAAAAAAAAAAAAAAA
+AAAAAC5jb250ZW50UEsFBgAAAAABAAEANgAAAC4CAAAAAA==
+------=_contents/MyProject/MyModel.workflow-e7363a04-fc09-347f-9b30-65cae851ecae--
+------=_contents/MyProject/MyModel.workflow_conf-e5ff57f4-38fa-3034-b2c6-7b18e63c15af
+Content-Type: q7/binary
+Entry-Name: contents/MyProject/MyModel.workflow_conf
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnRVjj0LwjAQhnfB/xDO2USdJDR2EASH
+bgru6dlG01xJi6n/3oui4HJwD+9XUU6dFw+Mg6NgYC1XIDBYql1oDJxPh+UWyt18VlgKV73nU1GNXkyd
+0z/XJrs4JwyauYF2HHutVEpJUtdIio26VMevJCcZYCjRetcPKG9plJkCFwlRYIjOtlh/mtqILK+e708m
+iverp7RQoPIs9b+L0QtQSwcIl3kTPJwAAADSAAAAUEsBAhQAFAAICAgAAAAhAJd5EzycAAAA0gAAAAgA
+AAAAAAAAAAAAAAAAAAAAAC5jb250ZW50UEsFBgAAAAABAAEANgAAANIAAAAAAA==
+------=_contents/MyProject/MyModel.workflow_conf-e5ff57f4-38fa-3034-b2c6-7b18e63c15af--
+------=_contents/MyProject/.project-db7607a0-e356-3aa3-a20e-b3efc9871b2e
+Content-Type: q7/binary
+Entry-Name: contents/MyProject/.project
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnSzsa/IzVEoSy0qzszPs1Uy1DNQUkjN
+S85PycxLt1UKDXHTtVCyt+Plsikoys9KTS5xSS1OLsosKAGqBopy2uQl5qba+VYGQGRt9MF8kERyfm5u
+al6JnY0+jAUShZpSDOboo/CSSjNzUoILUpMhcqjcvMSS0qJUqDYEB24EqrMAUEsHCNSdZ4d/AAAA1QAA
+AFBLAQIUABQACAgIAAAAIQDUnWeHfwAAANUAAAAIAAAAAAAAAAAAAAAAAAAAAAAuY29udGVudFBLBQYA
+AAAAAQABADYAAAC1AAAAAAA=
+------=_contents/MyProject/.project-db7607a0-e356-3aa3-a20e-b3efc9871b2e--
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf
+Content-Type: q7/binary
+Entry-Name: .q7.content
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnSNkT9vgzAQxfdK/Q6W99oNCxWCRlUT
+Vf1DFalDkglF5iBusU3Aicm370GALBnY7u79fPeeHM4bVZATVLU0OqIz9kgJaGFSqfOIHm328ETnz/d3
+oTCKNaaClB185kz1V5c7AcF6qF6NttBY0igZjOu8dh0e0HWA84jurS0Dzp1zzKicmSrnm/h9QG6fGF9x
+1Hmn84PPR52BwBkleqeQ/ZGqLIC0trLCOLKWdk888iIsGqopkWlEE/etNuJt6S3h80t/LBJvtfWPOcWY
+hGBQDKJt12BbVuYXhK37/fF5dRnQHkAkkwUMOut5ym/r8Tk2KRRdvNbgVC5BW9lk+CThujnkQ4ZLQH5N
+2NaTvhXZf1BLBwhqWk07DQEAACoCAABQSwECFAAUAAgICAAAACEAalpNOw0BAAAqAgAACAAAAAAAAAAA
+AAAAAAAAAAAALmNvbnRlbnRQSwUGAAAAAAEAAQA2AAAAQwEAAAAA
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf--
+------=_contents/MyProject/MyModel.workflow_view-fcd6a632-a77f-39a6-94f8-67a1713dd347
+Content-Type: q7/binary
+Entry-Name: contents/MyProject/MyModel.workflow_view
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnS1kzFPwzAQhXck/oNlZuwmERBFMe1Q
+kBiyFYnVJNfkwLErx60bfj1OQ6EDSAiUyfbzu3ufznI+37eK7MB2aLSgEZtRAro0Fepa0MfV/WVK57fn
+Z/kOwWdLlLWVLdm3mH3WxENN6KK7LOiCNs5tMs6998y0NTO25k/Fw9Ey9BE0iAxKhZsO2It3fFBpiCEk
+r6ArLT5DV5gKFGksrAUt+sOJeWNf18r4C075aFeyN1u3lE6SoQlWgq6gbDSWUoXMgJcGvD6scUIJanQo
+Fb5B8Dm7hTH0NPZOQQva/RjMFzA6OjbjCx1uw+ZIw79wfo030iXpZHTR3+lurg90URRPRhf/Y3bR1Qfe
+dE+bfI+X89MPEYR3UEsHCDn2UBISAQAASQMAAFBLAQIUABQACAgIAAAAIQA59lASEgEAAEkDAAAIAAAA
+AAAAAAAAAAAAAAAAAAAuY29udGVudFBLBQYAAAAAAQABADYAAABIAQAAAAA=
+------=_contents/MyProject/MyModel.workflow_view-fcd6a632-a77f-39a6-94f8-67a1713dd347--

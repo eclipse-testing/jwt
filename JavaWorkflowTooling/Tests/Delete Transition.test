@@ -1,0 +1,47 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Contexts: _KgB1kGCLEeKhj7ypbQffOQ,_wNmXcGE2EeKLnJD_2PY7ug,_R9zp8GE0EeKLnJD_2PY7ug
+Element-Name: Delete Transition
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _D1l1QGE4EeKLnJD_2PY7ug
+Save-Time: 1/18/13 1:30 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+TEST STEPS
+
+1. Open Simple Process workflow diagram;
+2. Select ingoing transition to Activity1 and press DEL key;
+3. Verify that transition has been deleted from a diagram ind properties view. 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-editor "Overview (MyModel.workflow)" | get-tab-folder | get-tab-item SimpleProcess | click
+with [get-editor "SimpleProcess (MyModel.workflow)" | get-diagram] {
+    with [get-edit-part -name SimpleProcess | get-edit-part -name Action1 | get-target-connection 0] {
+        mouse-move 26 53 button1 -height 98 -width 60
+        mouse-press 26 53 button1 -height 98 -width 60
+        mouse-release 26 53 button1 524288 -height 98 -width 60
+        mouse-hover 26 53 -height 98 -width 60
+    }
+    key-type Del
+}
+with [get-editor "SimpleProcess (MyModel.workflow)" | get-diagram | get-edit-part -name SimpleProcess | get-edit-part 
+    -name Action1] {
+    mouse-move 37 19 button1 -height 29 -width 55
+    mouse-press 37 19 button1 -height 29 -width 55
+    mouse-release 37 19 button1 524288 -height 29 -width 55
+}
+get-view Properties | get-tree | get-item "Ingoing Transitions" | get-property columns -index 1 | equals "" 
+    | verify-true
+    
+get-editor "SimpleProcess (MyModel.workflow)" | get-diagram | get-edit-part -name SimpleProcess | get-edit-part -name Action1 | verify-error{get-target-connection 0} 
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

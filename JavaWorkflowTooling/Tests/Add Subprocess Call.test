@@ -1,0 +1,104 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Contexts: _KgB1kGCLEeKhj7ypbQffOQ,_7Rw1MGFGEeKLnJD_2PY7ug,_R9zp8GE0EeKLnJD_2PY7ug
+Element-Name: Add Subprocess Call
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: http://jira4.xored.com/browse/QS-2337
+Id: _5hW1QGFLEeKLnJD_2PY7ug
+Save-Time: 1/18/13 3:58 PM
+Tags: skipExecution
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+TEST STEPS
+
+1. Press "Create a new Process" button;
+2. Set new process name and press Finish;
+3. Expand a palette and add "Subprocess Call";
+4. In a properties view set name and select "Simple Process" in "Links to" field;
+5. Verify that subprocess call is added. 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Package Explorer" | get-tree | select "MyProject/MyModel.workflow" | double-click
+get-editor "Overview (MyModel.workflow)" | get-group Properties | get-editbox -after [get-label "Name:"] | set-focus
+get-button "Creates a new process" | click
+with [get-window "New Process"] {
+    get-tree | select "Model: SimpleProcess"
+    get-editbox -after [get-label "Name:"] | set-text NewProcess
+    get-button Finish | click
+}
+with [get-editor "NewProcess (MyModel.workflow)"] {
+    with [get-canvas] {
+        mouse-press 6 11 button1
+        mouse-release 6 11 button1 524288
+    }
+    with [get-palette] {
+        get-palette-entry Marquee | mouse-move 121 8 -height 23 -width 125
+        get-palette-entry Action | mouse-move 111 12 -height 23 -width 125
+        get-palette-entry "Initial Node" | mouse-move 104 7 -height 23 -width 125
+        get-palette-entry "Final Node" | mouse-move 92 15 -height 23 -width 125
+        get-palette-entry Event | mouse-move 80 12 -height 23 -width 125
+        get-palette-entry "Fork Node" | mouse-move 65 18 -height 23 -width 125
+        get-palette-entry "Join Node" | mouse-move 48 21 -height 23 -width 125
+        get-palette-entry "Decision Node" | mouse-move 31 19 -height 23 -width 125
+        get-palette-entry "Merge Node" | mouse-move 25 21 -height 23 -width 125
+        get-palette-entry Guard | mouse-move 38 19 -height 23 -width 125
+        get-palette-entry "Embedded Subprocess" | mouse-move 52 33 -height 37 -width 125
+        with [get-palette-entry "Subprocess Call"] {
+            mouse-move 56 13 button1 -height 23 -width 125
+            mouse-press 56 13 button1 -height 23 -width 125
+            mouse-release 56 13 button1 524288 -height 23 -width 125
+        }
+    }
+    with [get-diagram] {
+        mouse-move 143 274 button1 -height 556 -width 359
+        mouse-press 143 274 button1 -height 556 -width 359
+        mouse-release 143 274 button1 524288 -height 556 -width 359
+    }
+    get-diagram -index 1 | get-edit-part -name NewProcess | get-edit-part -className ActivityLinkNodeEditPart 
+        | mouse-hover 14 22 -height 45 -width 28
+}
+with [get-view Properties | get-tree] {
+    select "Links to" | activate-cell-edit -column 1
+    get-combo | select "Activity: SimpleProcess"
+}
+get-editor "NewProcess (MyModel.workflow)" | get-diagram -index 1 | mouse-hover 214 408 -height 556 -width 359
+get-view Properties | get-tree | apply-cell-edit
+with [get-editor "NewProcess (MyModel.workflow)" | get-diagram -index 1] {
+    mouse-move 214 408 button1 -height 556 -width 359
+    mouse-press 214 408 button1 -height 556 -width 359
+    mouse-release 214 408 button1 524288 -height 556 -width 359
+    key-type "M1+s"
+    mouse-hover 214 408 -height 556 -width 359
+    with [get-edit-part -name NewProcess | get-edit-part -className ActivityLinkNodeEditPart] {
+        mouse-move 14 32 button1 -height 45 -width 28
+        mouse-press 14 32 button1 -height 45 -width 28
+        mouse-release 14 32 button1 524288 -height 45 -width 28
+        mouse-hover 14 32 -height 45 -width 28
+    }
+}
+with [get-view Properties | get-tree] {
+    select Name | activate-cell-edit -column 1
+    get-editbox | set-text SimpleProcessCall
+    apply-cell-edit
+}
+with [get-editor "NewProcess (MyModel.workflow)" | get-diagram -index 1] {
+    mouse-move 241 463 button1 -height 556 -width 359
+    mouse-press 241 463 button1 -height 556 -width 359
+    mouse-release 241 463 button1 524288 -height 556 -width 359
+    mouse-hover 234 462 -mask CTRL -height 556 -width 359
+    key-type "M1+s"
+}
+with [get-editor "NewProcess (MyModel.workflow)" | get-diagram -index 1 | get-edit-part -name NewProcess] {
+    get-property childrenCount | equals 1 | verify-true
+    get-edit-part -name SimpleProcessCall | get-figure 0 | get-property text | equals SimpleProcessCall | verify-true
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
