@@ -7,8 +7,7 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: http://jira4.xored.com/browse/QS-2337
 Id: _5hW1QGFLEeKLnJD_2PY7ug
-Save-Time: 1/18/13 3:58 PM
-Tags: skipExecution
+Save-Time: 1/18/13 4:52 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -27,9 +26,7 @@ TEST STEPS
 Content-Type: text/ecl
 Entry-Name: .content
 
-get-view "Package Explorer" | get-tree | select "MyProject/MyModel.workflow" | double-click
-get-editor "Overview (MyModel.workflow)" | get-group Properties | get-editbox -after [get-label "Name:"] | set-focus
-get-button "Creates a new process" | click
+get-editor "Overview (MyModel.workflow)" | get-group Processes | get-button "New Process..." | click
 with [get-window "New Process"] {
     get-tree | select "Model: SimpleProcess"
     get-editbox -after [get-label "Name:"] | set-text NewProcess
