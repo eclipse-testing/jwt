@@ -1,0 +1,43 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Contexts: _KgB1kGCLEeKhj7ypbQffOQ,_7Rw1MGFGEeKLnJD_2PY7ug,_R9zp8GE0EeKLnJD_2PY7ug
+Element-Name: Save Process as Image
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _mwKiwGOeEeKLnJD_2PY7ug
+Save-Time: 1/21/13 2:50 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+TEST STEPS
+
+1. Right-click SimpleProcess diagram and select "Save Process as Image" command;
+2. Set file location and name and click Finish;
+3. Make sure that a file has been saved. 
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-editor "Overview (MyModel.workflow)" | get-tab-folder | get-tab-item SimpleProcess | click
+with [get-editor "SimpleProcess (MyModel.workflow)" | get-diagram] {
+    mouse-move 265 193 button3 -height 556 -width 498
+    mouse-press 265 193 button3 -height 556 -width 498
+    mouse-release 265 193 button3 2097152 -height 556 -width 498
+}
+set-dialog-result File "platform:/resource/MyProject/ProcessImage.png"
+with [get-editor "SimpleProcess (MyModel.workflow)" | get-diagram] {
+    get-menu "Save process as image" | click
+    mouse-hover 236 413 -height 556 -width 498
+}
+
+get-view "Package Explorer" | get-tree | select MyProject | get-menu Refresh | click
+get-view "Package Explorer" | get-tree | get-item "MyProject/ProcessImage.png" | get-property caption 
+    | equals "ProcessImage.png" | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

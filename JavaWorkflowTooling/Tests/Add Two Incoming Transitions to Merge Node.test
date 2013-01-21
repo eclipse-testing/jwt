@@ -1,0 +1,101 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Contexts: _KgB1kGCLEeKhj7ypbQffOQ,_Z8_70GE5EeKLnJD_2PY7ug,_R9zp8GE0EeKLnJD_2PY7ug
+Element-Name: Add Two Incoming Transitions to Merge Node
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _Qf1kAGONEeKLnJD_2PY7ug
+Save-Time: 1/21/13 12:50 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+TEST STEPS
+
+1. Add merge node;
+2. Drag 2 incoming transitions to merge node: from Action1 and from Action2;
+3. Verify that transitions have been successfully created;
+4. Verify Merge node properties for incoming transitions. 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-editor "Overview (MyModel.workflow)" | get-tab-folder | get-tab-item SimpleProcess | click
+with [get-editor "SimpleProcess (MyModel.workflow)"] {
+    with [get-canvas] {
+        mouse-press 2 11 button1
+        mouse-release 2 11 button1 524288
+    }
+    with [get-palette] {
+        get-palette-entry Select | mouse-move 121 21 -height 23 -width 125
+        get-palette-entry Marquee | mouse-move 121 20 -height 23 -width 125
+        get-palette-entry Action | mouse-move 121 19 -height 23 -width 125
+        get-palette-entry "Initial Node" | mouse-move 122 11 -height 23 -width 125
+        with [get-palette-entry "Merge Node"] {
+            mouse-move 121 20 -height 23 -width 125
+            mouse-move 70 0 -height 23 -width 125
+            mouse-move 67 16 button1 -height 23 -width 125
+            mouse-press 67 16 button1 -height 23 -width 125
+            mouse-release 67 16 button1 524288 -height 23 -width 125
+        }
+    }
+    with [get-diagram] {
+        mouse-move 174 340 button1 -height 551 -width 374
+        mouse-press 174 340 button1 -height 551 -width 374
+        mouse-release 174 340 button1 524288 -height 551 -width 374
+    }
+    with [get-palette | get-palette-entry "Activity Edge"] {
+        mouse-move 37 16 button1 -height 23 -width 125
+        mouse-press 37 16 button1 -height 23 -width 125
+        mouse-release 37 16 button1 524288 -height 23 -width 125
+        mouse-move 14 5 -height 23 -width 125
+    }
+    with [get-diagram -index 1 | get-edit-part -name SimpleProcess] {
+        with [get-edit-part -name Action1] {
+            mouse-move 25 13 button1 -height 29 -width 55
+            mouse-press 25 13 button1 -height 29 -width 55
+            mouse-release 25 13 button1 524288 -height 29 -width 55
+        }
+        with [get-edit-part -className MergeNodeEditPart] {
+            mouse-move 7 5 button1 -height 24 -width 24
+            mouse-press 7 5 button1 -height 24 -width 24
+            mouse-release 7 5 button1 524288 -height 24 -width 24
+        }
+        with [get-edit-part -name Action2] {
+            mouse-move 36 14 button1 -height 29 -width 55
+            mouse-press 36 14 button1 -height 29 -width 55
+            mouse-release 36 14 button1 524288 -height 29 -width 55
+        }
+        with [get-edit-part -className MergeNodeEditPart] {
+            mouse-move 10 12 button1 -height 24 -width 24
+            mouse-press 10 12 button1 -height 24 -width 24
+            mouse-release 10 12 button1 524288 -height 24 -width 24
+            mouse-hover 10 12 -height 24 -width 24
+        }
+    }
+    with [get-palette | get-palette-entry Select] {
+        mouse-move 57 22 -height 23 -width 125
+        mouse-move 49 12 button1 -height 23 -width 125
+        mouse-press 49 12 button1 -height 23 -width 125
+        mouse-release 49 12 button1 524288 -height 23 -width 125
+    }
+    with [get-diagram -index 1 | get-edit-part -name SimpleProcess | get-edit-part -className MergeNodeEditPart] {
+        mouse-move 11 11 button1 -height 24 -width 24
+        mouse-press 11 11 button1 -height 24 -width 24
+        mouse-release 11 11 button1 524288 -height 24 -width 24
+        activate-direct-edit
+        mouse-hover 10 12 -height 24 -width 24
+    }
+}
+with [get-view Properties | get-tree] {
+    get-item "Ingoing Transitions" | get-property columns -index 0 | equals "Ingoing Transitions" | verify-true
+    get-item "Ingoing Transitions" | get-property columns -index 1 
+        | equals "Activity Edge (Action: Action1 -> Merge Node: ), Activity Edge (Action: Action2 -> Merge Node: )" 
+        | verify-true
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

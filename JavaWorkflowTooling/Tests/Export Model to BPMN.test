@@ -1,0 +1,63 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Contexts: _KgB1kGCLEeKhj7ypbQffOQ,_7Rw1MGFGEeKLnJD_2PY7ug,_R9zp8GE0EeKLnJD_2PY7ug
+Element-Name: Export Model to BPMN
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _jDF4QGOXEeKLnJD_2PY7ug
+Save-Time: 1/21/13 1:56 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+TEST STEPS
+
+1. Press External/Export button;
+2. Set file location and select "Export to BPMN" transformation;
+3. Check "Open created file" option;
+4. Click Finish;
+5.  Make sure that created file is opened and verify that it contains BPMN. 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-button External | click -arrow
+get-menu Export | click
+get-window -from "Window.createShell()" | get-group Transformation | get-combo | select "Export JWT to BPMN"
+set-dialog-result File "platform:/resource/MyProject/exportedModel"
+with [get-window -from "Window.createShell()"] {
+    with [get-group "Output File"] {
+        get-button Browse | click
+        get-button "Open created file" | click
+    }
+    get-button Finish | click
+}
+get-editor exportedModel | get-editbox | get-property text | equals "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n"
+    + "<bpmn:BpmnDiagram xmi:version=\"2.0\" xmlns:xmi=\"http://www.omg.org/XMI\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:bpmn=\"http://stp.eclipse.org/bpmn\" name=\"SimpleProcess\">\n"
+    + "  <artifacts xsi:type=\"bpmn:DataObject\" name=\"URL123\">\n"
+    + "    <eAnnotations source=\"org.eclipse.jwt/processes\" references=\"//@artifacts.0\">\n"
+    + "      <details key=\"jwt_dataType\" value=\"URL\"/>\n"
+    + "    </eAnnotations>\n"
+    + "  </artifacts>\n"
+    + "  <pools name=\"SimpleProcess\">\n"
+    + "    <vertices xsi:type=\"bpmn:Activity\" incomingEdges=\"//@pools.0/@sequenceEdges.1\" lanes=\"//@pools.0/@lanes.0\" activityType=\"EventEndTerminate\"/>\n"
+    + "    <vertices xsi:type=\"bpmn:Activity\" outgoingEdges=\"//@pools.0/@sequenceEdges.0\" lanes=\"//@pools.0/@lanes.0\" activityType=\"EventStartEmpty\"/>\n"
+    + "    <vertices xsi:type=\"bpmn:Activity\" outgoingEdges=\"//@pools.0/@sequenceEdges.1\" incomingEdges=\"//@pools.0/@sequenceEdges.0\" name=\"Action1\" lanes=\"//@pools.0/@lanes.0\" activityType=\"Task\">\n"
+    + "      <eAnnotations source=\"org.eclipse.jwt/processes\">\n"
+    + "        <details key=\"jwt_performedByApplication_name\" value=\"InternetBrowser\"/>\n"
+    + "        <details key=\"jwt_performedByApplication_javaClass\" value=\"eu.emundo.agilpro.fw.fe.intf.BrowserUi\"/>\n"
+    + "        <details key=\"jwt_performedByApplication_icon\" value=\"\"/>\n"
+    + "        <details key=\"jwt_performedByApplication_jarFile\" value=\"no found jarFile\"/>\n"
+    + "      </eAnnotations>\n"
+    + "    </vertices>\n"
+    + "    <sequenceEdges name=\"Init2Action1\"/>\n"
+    + "    <sequenceEdges name=\"Action12End\"/>\n"
+    + "    <lanes name=\"TestRole\" activities=\"//@pools.0/@vertices.2 //@pools.0/@vertices.1 //@pools.0/@vertices.0\"/>\n"
+    + "  </pools>\n"
+    + "</bpmn:BpmnDiagram>" | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

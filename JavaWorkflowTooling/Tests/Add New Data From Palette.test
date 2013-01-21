@@ -1,0 +1,87 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Contexts: _KgB1kGCLEeKhj7ypbQffOQ,_7Rw1MGFGEeKLnJD_2PY7ug,_R9zp8GE0EeKLnJD_2PY7ug
+Element-Name: Add New Data From Palette
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _t8L9MGOhEeKLnJD_2PY7ug
+Save-Time: 1/21/13 3:09 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+TEST STEPS
+
+1. Open SimpleProcess Diagram;
+2. Expand palette and select Data from "New Elements" section;
+3. Add Data on a diagram;
+4. Set Data name in properties view;
+5. Make sure your changes have been saved in Outline view. 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-editor "Overview (MyModel.workflow)" | get-tab-folder | get-tab-item SimpleProcess | click
+with [get-editor "SimpleProcess (MyModel.workflow)"] {
+    with [get-canvas] {
+        mouse-press 5 10 button1
+        mouse-release 5 10 button1 524288
+    }
+    with [get-palette] {
+        get-palette-entry Select | mouse-move 118 17 -height 23 -width 125
+        get-palette-entry Marquee | mouse-move 118 9 -height 23 -width 125
+        get-palette-entry Action | mouse-move 120 15 -height 23 -width 125
+        get-palette-entry "Initial Node" | mouse-move 120 17 -height 23 -width 125
+        get-palette-entry "Final Node" | mouse-move 120 9 -height 23 -width 125
+        get-palette-entry Event | mouse-move 120 8 -height 23 -width 125
+        get-palette-entry "Fork Node" | mouse-move 120 0 -height 23 -width 125
+        get-palette-entry "Join Node" | mouse-move 113 19 -height 23 -width 125
+        get-palette-entry "Decision Node" | mouse-move 110 20 -height 23 -width 125
+        get-palette-entry "Merge Node" | mouse-move 103 22 -height 23 -width 125
+        get-palette-entry Guard | mouse-move 95 21 -height 23 -width 125
+        get-palette-entry "Embedded Subprocess" | mouse-move 76 34 -height 37 -width 125
+        get-palette-entry "Subprocess Call" | mouse-move 73 17 -height 23 -width 125
+        get-palette-entry "Activity Edge" | mouse-move 71 17 -height 23 -width 125
+        get-palette-entry ReferenceEdge | mouse-move 71 22 -height 23 -width 125
+        with [get-palette-entry "New Elements"] {
+            mouse-move 57 14 button1 -height 22 -width 125
+            mouse-press 57 14 button1 -height 22 -width 125
+        }
+        get-figure "0/2/0/0/1" | mouse-press 55 10 button1 -height 16 -width 121
+        get-palette-entry "New Elements" | mouse-release 57 14 button1 524288 -height 22 -width 125
+        get-figure "0/2/0/0/1" | mouse-release 55 10 button1 524288 -height 16 -width 121
+        with [get-palette-entry Data] {
+            mouse-move 31 7 -height 23 -width 125
+            mouse-move 51 9 button1 -height 23 -width 125
+            mouse-press 51 9 button1 -height 23 -width 125
+            mouse-release 51 9 button1 524288 -height 23 -width 125
+        }
+    }
+    with [get-diagram] {
+        mouse-move 246 120 button1 -height 551 -width 374
+        mouse-press 246 120 button1 -height 551 -width 374
+        mouse-release 246 120 button1 524288 -height 551 -width 374
+    }
+    with [get-diagram -index 1 | get-edit-part -name SimpleProcess | get-edit-part -className ReferenceEditPart 
+        -index 3 | get-edit-part -className ReferenceableElementProxyEditPart] {
+        mouse-hover 12 19 -height 39 -width 24
+        mouse-move 10 12 button1 -height 39 -width 24
+        mouse-press 10 12 button1 -height 39 -width 24
+        mouse-release 10 12 button1 524288 -height 39 -width 24
+    }
+}
+with [get-view Properties | get-tree] {
+    select Name | activate-cell-edit -column 1
+    with [get-editbox] {
+        set-text DataName
+        key-type "M1+s"
+    }
+}
+get-view Outline | get-tree | get-item "Model: SimpleProcess/Data: DataName" | get-property caption 
+    | equals "Data: DataName" | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

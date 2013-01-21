@@ -1,0 +1,48 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Contexts: _KgB1kGCLEeKhj7ypbQffOQ,_7Rw1MGFGEeKLnJD_2PY7ug,_GxK-MGCLEeKhj7ypbQffOQ
+Element-Name: Create New JWT View File
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _j1pc8GOfEeKLnJD_2PY7ug
+Save-Time: 1/21/13 3:41 PM
+Tags: skipExecution
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+TEST STEPS
+
+1. Right-click MyProject and select JWT/New JWT view file;
+2. Set view name and click Finish;
+3. Make sure that view file editor is opened and contains Properties of E-Classes. 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Package Explorer" | get-tree | select MyProject | get-menu "New/Other..." | click
+with [get-window New] {
+    get-tree | select "Java Workflow Tooling/New JWT view file"
+    get-button "Next >" | click
+}
+with [get-window -from "Window.createShell()"] {
+    get-button "Browse..." | click
+    with [get-window "Folder Selection"] {
+        get-tree | select MyProject
+        get-button OK | click
+        
+    }
+    get-editbox -after [get-label "View name:"] | set-text MyView
+        get-button Finish | click
+}
+
+get-editor "new_file.view" | get-group "View name" | get-editbox -after [get-label Name] | get-property text 
+    | equals MyView | verify-true
+
+get-editor "new_file.view" | get-group Properties | get-table | get-property itemCount | equals 44 | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

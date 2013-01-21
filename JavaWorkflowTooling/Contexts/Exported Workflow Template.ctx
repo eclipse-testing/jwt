@@ -1,0 +1,88 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Context-Type: com.xored.q7.workspace.context
+Element-Name: Exported Workflow Template
+Element-Type: context
+Element-Version: 2.0
+Id: _AEMesGOSEeKLnJD_2PY7ug
+Save-Time: 1/21/13 1:18 PM
+
+------=_contents/MyProject/MyModel.workflow-e7363a04-fc09-347f-9b30-65cae851ecae
+Content-Type: q7/binary
+Entry-Name: contents/MyProject/MyModel.workflow
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnTtlMtOwzAQRfdI/IPlfeO2bFCUUCEQ
+ElIrVX1IbI09TQyOndoOSf8euw9aSlngNTt7fM+9mtEk2airJPoAY4VWOR4kfYxAMc2FKnK8XDz1bvHo
+7voqY9pAOtEcJOoqkX4Rw0B4D2VTX89x6VydEtK2baKrItGmIC+T5y+J/S5pb7aKYb8/8LLxnJVQ0Z5Q
+1lHF4ECF7Bx7YQJMitpC8tY6EqoHBaeO/lSEKkaKVp6ei6qWMDWagbUY0caV2uS48yYcnw1gJSScVEKL
+fgQIZbZ5rSl7pwXYve19XUvBqPNSuxN5mW4V8AddVaAcctC5HC9KQKEpTg1Hew+00gbRUwOyiyEnOb8F
+z7SEuESzJf8Q9RjGGJO0nT85kJeN3aY+9hHhv+PJ0QAkBNYiv2tpeM1x0KUhbOGvh4VYzsYxGBd6So0/
+OjAx/LqhUqxEHGyBGlauGzCbGDzsdTj9jytuXBe+lrNKRo7/SX/9BFBLBwi40xKAagEAAF4FAABQSwEC
+FAAUAAgICAAAACEAuNMSgGoBAABeBQAACAAAAAAAAAAAAAAAAAAAAAAALmNvbnRlbnRQSwUGAAAAAAEA
+AQA2AAAAoAEAAAAA
+------=_contents/MyProject/MyModel.workflow-e7363a04-fc09-347f-9b30-65cae851ecae--
+------=_contents/MyProject/MyModel.workflow_conf-e5ff57f4-38fa-3034-b2c6-7b18e63c15af
+Content-Type: q7/binary
+Entry-Name: contents/MyProject/MyModel.workflow_conf
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnRVjj0LwjAQhnfB/xDO2USdJDR2EASH
+bgru6dlG01xJi6n/3oui4HJwD+9XUU6dFw+Mg6NgYC1XIDBYql1oDJxPh+UWyt18VlgKV73nU1GNXkyd
+0z/XJrs4JwyauYF2HHutVEpJUtdIio26VMevJCcZYCjRetcPKG9plJkCFwlRYIjOtlh/mtqILK+e708m
+iverp7RQoPIs9b+L0QtQSwcIl3kTPJwAAADSAAAAUEsBAhQAFAAICAgAAAAhAJd5EzycAAAA0gAAAAgA
+AAAAAAAAAAAAAAAAAAAAAC5jb250ZW50UEsFBgAAAAABAAEANgAAANIAAAAAAA==
+------=_contents/MyProject/MyModel.workflow_conf-e5ff57f4-38fa-3034-b2c6-7b18e63c15af--
+------=_contents/MyProject/exportedTemplate.workflowtemplate-912e7e42-0d5c-3bca-973d-1187a6297d1c
+Content-Type: q7/binary
+Entry-Name: contents/MyProject/exportedTemplate.workflowtemplate
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnS1V1tP2zAUfp+0/2DlndwKEovaMa4S
+EpsQF2mvxjltzRI72E7T7tfvOGmalCa0QCchEdvf+b5zy3EzPJmnCZmB0lyKkRO4vkNAMBlzMRk5jw9X
+B8fOyfevX4bzlEe/f14T+38FDy0cCYSOcH/kTI3JIs8risKV6cSVauKhzQqi1yHFoESEvh8g7OaeTSGl
+B1xoQwWD2opmWcIZNaUg4l1gCc80uM+F8VqHNZ5JBZtAu1sjYmroJsLu1gg8o4LrkldvQteOa5tMSQZa
+Qwd+dVRjZxyKTZjddTDXhAytu9FPGUNCBE0xnnueZgncVkQOobmZSjVy5oiLnVf1G/MEWju2SCUr8ur8
+KaPsD52AXhKfNhnUNQyBkEAKwmiCRYvMIkNkK9fRaTvvFdG1MKAEmDMlCw3KIZxZfYc8U3Wq2JTPoFrN
+6HlCNaYJchfSXMTSpROeYJLcceGOweXCjN0lzSN3SAoYbIzGXh2G14qjP7Q7mcCWmNYqGVmDOpwH0KZa
+L+N4p/iFbadGuxtgnWh52O2jbczIoh9wWbv3eHez8uhdhjGXt1ThI1brYwwvOU34mH/UXAPFbnjJQS0+
+RmDb2z7tbt1KWhAOms6c0SSHtZG0oFMpXSZTh8RL2ZHj+d6PVv3ccH2Jp7U4vmmNU52N0rXX4fpqYkSn
+zPAZNwuncxA0YrIQEJ/L1DIRA3ODLTzlmuAfJU9Uc0ZoTdXyUeCM6Ra+4oImv/AY8yWqJDRh4nNsYw92
+47oW3PCaTeamj87fjc7mpBk81Sp4y03/TVU0zUCNpUohPlts1jtYKzCBObDcdEPXewE9ynKj39VBR+0U
+lP4RLXPFYNP7MkHWe0PVBDrCqwDhexnDbYx+axjWp9W95TUXV7Vh77TogtMJjhyCtkzxJ9AlwLKvLqaE
+LrBC9mVtUJcVdb8XxLLz2A5rNhV4HyV4weKvkmM8wuKEg2NbgrL1+F9AnFF5MzY+ohn0a/4vybBPMjis
+wzz6hCY2t4IxKPzR91ZOg8OjUuzbZ+Jb1+rN5eGglBoc7k+rN4lh4O8k1nARvDwM5ThtrzfmjUNWuK1j
+ZIW8tK/kK4/Lvdabuw/9PmS/vr9X/TeH3i7uBB3ulCe7u7TRgZRVHxbbRueeFMPtiiTmCpYYLvbtgL9r
+yEOvPbrtF6C3/ATE539QSwcIfnusKmwDAAA2DgAAUEsBAhQAFAAICAgAAAAhAH57rCpsAwAANg4AAAgA
+AAAAAAAAAAAAAAAAAAAAAC5jb250ZW50UEsFBgAAAAABAAEANgAAAKIDAAAAAA==
+------=_contents/MyProject/exportedTemplate.workflowtemplate-912e7e42-0d5c-3bca-973d-1187a6297d1c--
+------=_contents/MyProject/.project-db7607a0-e356-3aa3-a20e-b3efc9871b2e
+Content-Type: q7/binary
+Entry-Name: contents/MyProject/.project
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnSzsa/IzVEoSy0qzszPs1Uy1DNQUkjN
+S85PycxLt1UKDXHTtVCyt+Plsikoys9KTS5xSS1OLsosKAGqBopy2uQl5qba+VYGQGRt9MF8kERyfm5u
+al6JnY0+jAUShZpSDOboo/CSSjNzUoILUpMhcqjcvMSS0qJUqDYEB24EqrMAUEsHCNSdZ4d/AAAA1QAA
+AFBLAQIUABQACAgIAAAAIQDUnWeHfwAAANUAAAAIAAAAAAAAAAAAAAAAAAAAAAAuY29udGVudFBLBQYA
+AAAAAQABADYAAAC1AAAAAAA=
+------=_contents/MyProject/.project-db7607a0-e356-3aa3-a20e-b3efc9871b2e--
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf
+Content-Type: q7/binary
+Entry-Name: .q7.content
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnSNkk9PhDAQxe8mfoemd1vdC4aAG6PE
++Ie4iSarJ0JgwCrtsNBd2G/vwFK8rMne2nm/mc57abDsdcV20LQKTcivxCVnYDLMlSlDvrXFxTVf3pyf
+BRlq0WMDudh4osPmp63TDPy1O92hsdBb1mvlz+MWwzh6wLQ+1UP+ZW3tS9l1nUBdCmxK+RE/OuT4E3OX
+JF2Outx4ctYFZFTjzKSa2KivsbGQs2GxosKOvYOuq9QSofKQJ7dRDO3D61sEzy/m6T5ZrD69bcnJImNk
+kkwYO17oWjf4DZltp9nxfnUo8AkgpFAVOF1MPJfH9XgfYw7VaG1Y7VQuobWKk+Gdgn8nw5SOy2Tusi4k
+1xhIZ/6QjPyLZjif9BeI/QVQSwcIMoLxnRcBAABfAgAAUEsBAhQAFAAICAgAAAAhADKC8Z0XAQAAXwIA
+AAgAAAAAAAAAAAAAAAAAAAAAAC5jb250ZW50UEsFBgAAAAABAAEANgAAAE0BAAAAAA==
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf--
+------=_contents/MyProject/MyModel.workflow_view-fcd6a632-a77f-39a6-94f8-67a1713dd347
+Content-Type: q7/binary
+Entry-Name: contents/MyProject/MyModel.workflow_view
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnRNjrsKwjAUhnfBdwjH2USdJDR2EcGh
+m4JrbU/TaC4lKU19exNBcfw//ltRzkaTCX1QzgrY0g0QtI1rlZUCrpfTeg/lYbkoJoWRH1UtfW3IbBT/
+ZXY5k1ps4IkL6Mdx4IzFGKkzkjov2a06fy25R0CCFButhoD0EUeWKaQZQooWQ+PVHUPlWtSk99gJqF4f
+RaPzz067uGLA8iv2fyuBN1BLBwhtslPqngAAAM8AAABQSwECFAAUAAgICAAAACEAbbJT6p4AAADPAAAA
+CAAAAAAAAAAAAAAAAAAAAAAALmNvbnRlbnRQSwUGAAAAAAEAAQA2AAAA1AAAAAAA
+------=_contents/MyProject/MyModel.workflow_view-fcd6a632-a77f-39a6-94f8-67a1713dd347--

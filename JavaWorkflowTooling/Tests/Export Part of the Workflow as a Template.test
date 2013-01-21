@@ -1,0 +1,54 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Contexts: _KgB1kGCLEeKhj7ypbQffOQ,_7Rw1MGFGEeKLnJD_2PY7ug,_R9zp8GE0EeKLnJD_2PY7ug
+Element-Name: Export Part of the Workflow as a Template
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _NL5msGOQEeKLnJD_2PY7ug
+Save-Time: 1/21/13 1:14 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+TEST STEPS
+
+1. Press "Import/Export Workflow Templates -> Export Workflow Template";
+2. Select file location and type a name;
+3. Select all technical data and a process;
+4. Press Finish button;
+5. Make sure that a template has been exported and that it contains comments. 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-button "Import or export parts of the workflow as template" | click
+with [get-window "Import/Export Workflow Templates"] {
+    get-button "Export Workflow Template" | click
+    get-button "Next >" | click
+    with [get-tree] {
+        select "Package: Applications"
+        get-item "Package: Applications" | check
+        get-item "Package: Roles" | check
+        get-item "Package: Data" | check
+        get-item "Activity: SimpleProcess" | check
+    }
+}
+set-dialog-result File "platform:/resource/MyProject/exportedTemplate.workflowtemplate"
+get-window "Import/Export Workflow Templates" | get-button Browse | click
+get-window "Import/Export Workflow Templates" | get-button "Export comments?" | get-property selected | equals true 
+    | verify-true
+with [get-window "Import/Export Workflow Templates"] {
+    get-button Finish | click
+    get-window "Template Export" | get-button OK | click
+}
+set-dialog-result File "platform:/resource/MyProject/exportedTemplate.workflowtemplate"
+get-menu "File/Open File..." | click
+get-tab-folder -index 1 | get-property activePage | equals "exportedTemplate.workflowtemplate" | verify-true
+get-editor "exportedTemplate.workflowtemplate" | get-editbox | get-property text | contains "This is a basic activity" 
+    | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

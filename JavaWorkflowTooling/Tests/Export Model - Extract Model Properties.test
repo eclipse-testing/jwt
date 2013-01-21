@@ -1,0 +1,81 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Contexts: _KgB1kGCLEeKhj7ypbQffOQ,_7Rw1MGFGEeKLnJD_2PY7ug,_R9zp8GE0EeKLnJD_2PY7ug
+Element-Name: Export Model - Extract Model Properties
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _z0xiMGOWEeKLnJD_2PY7ug
+Save-Time: 1/21/13 1:55 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+TEST STEPS
+
+1. Press External/Export button;
+2. Set file location and select "Extract nodes properties" transformation;
+3. Check "Open created file" option;
+4. Click Finish;
+5.  Make sure that created file is opened and verify that it contains extracted nodes properties. 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-button External | click -arrow
+get-menu Export | click
+get-window -from "Window.createShell()" | get-group Transformation | get-combo | select "Extract nodes properties"
+set-dialog-result File "platform:/resource/MyProject/exportedModel"
+with [get-window -from "Window.createShell()"] {
+    with [get-group "Output File"] {
+        get-button Browse | click
+        get-button "Open created file" | click
+    }
+    get-button Finish | click
+}
+get-editor exportedModel | get-editbox | get-property text | equals "## Begin package SimpleProcess\n"
+    + "## Begin package Applications\n"
+    + "# Properties of package element InternetBrowser:\n"
+    + "InternetBrowser/name=InternetBrowser\n\n\n"
+    + "InternetBrowser/javaClass=eu.emundo.agilpro.fw.fe.intf.BrowserUi\n\n"
+    + "## End package Applications\n"
+    + "## Begin package Roles\n"
+    + "# Properties of package element TestRole:\n"
+    + "TestRole/name=TestRole\n\n"
+    + "## End package Roles\n"
+    + "## Begin package Data\n"
+    + "## Begin package Datatypes\n"
+    + "# Properties of package element URL:\n"
+    + "URL/name=URL\n\n"
+    + "# Properties of package element dioParameter:\n"
+    + "dioParameter/name=dioParameter\n\n"
+    + "# Properties of package element qualifier:\n"
+    + "qualifier/name=qualifier\n\n"
+    + "# Properties of package element searchquery:\n"
+    + "searchquery/name=searchquery\n\n"
+    + "# Properties of package element filename:\n"
+    + "filename/name=filename\n\n"
+    + "# Properties of package element URL123:\n"
+    + "URL123/name=URL123\n\n"
+    + "URL123/value=http://www.yahoo.com\n"
+    + "## End package Datatypes\n"
+    + "## End package Data\n"
+    + "## Begin activity SimpleProcess\n"
+    + "# IO Properties of action Action1:\n"
+    + "SimpleProcess/Action1/input0=URL123\n"
+    + "# Other properties of action Action1:\n"
+    + "SimpleProcess/Action1/name=Action1\n\n"
+    + "SimpleProcess/Action1/targetexecutiontime=0\n"
+    + "# Aspect properties of action Action1:\n"
+    + "# Data mapping of action Action1:\n"
+    + "# Other properties of application of action Action1:\n"
+    + "SimpleProcess/Action1/name=InternetBrowser\n\n\n"
+    + "SimpleProcess/Action1/javaClass=eu.emundo.agilpro.fw.fe.intf.BrowserUi\n\n"
+    + "# Aspect properties of application of action Action1:\n"
+    + "## End activity SimpleProcess\n"
+    + "## End package SimpleProcess" | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

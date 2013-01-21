@@ -1,0 +1,68 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Contexts: _KgB1kGCLEeKhj7ypbQffOQ,_AEMesGOSEeKLnJD_2PY7ug,_R9zp8GE0EeKLnJD_2PY7ug
+Element-Name: Create New Workflow Model Using Template
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _V2TqsGOTEeKLnJD_2PY7ug
+Save-Time: 1/21/13 1:29 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+TEST STEPS
+
+1. Right-click MyProject in Package Explorer view and select New/Other/New Workflow Model;
+2. Set model and press Next;
+3. Select workflow template and click Add button;
+4. Click Finish;
+5. Make sure that new model contains all data from a template. 
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Package Explorer" | get-tree | select MyProject | get-menu "New/Other..." | click
+with [get-window New] {
+    get-tree | select "Java Workflow Tooling/New Workflow model"
+    get-button "Next >" | click
+}
+with [get-window "New Workflow model..."] {
+    get-editbox -after [get-label "File name:"] | set-text "NewWFModel.workflow"
+    with [get-button "Next >"] {
+        click
+        click
+    }
+}
+set-dialog-result File "platform:/resource/MyProject/exportedTemplate.workflowtemplate"
+with [get-window "New Workflow model..."] {
+    get-button Browse | click
+    get-button Add | click
+    get-list | select "C:\\Users\\Ulyana\\aut-EclipseWithJWT\\MyProject\\exportedTemplate.workflowtemplate"
+    get-button Finish | click
+}
+get-window Error | get-button Yes | click
+get-view "Package Explorer" | get-tree | select "MyProject/NewWFModel.workflow" | double-click
+get-editor "Overview (NewWFModel.workflow)" | get-tab-folder | get-tab-item Diagram1 | click
+get-editor "Diagram1 (NewWFModel.workflow)" | get-tab-folder | get-tab-item Overview | click
+with [get-editor "Overview (NewWFModel.workflow)"] {
+    get-group Roles | get-tree | get-item "Package: Roles/Role: TestRole" | get-property caption 
+        | equals "Role: TestRole" | verify-true
+    get-group Applications | get-tree | get-item "Package: Applications/Application: InternetBrowser" 
+        | get-property caption | equals "Application: InternetBrowser" | verify-true
+}
+get-editor "Overview (NewWFModel.workflow)" | get-group Data | get-tree | select "Package: Applications"
+get-editor "Overview (NewWFModel.workflow)" | get-group Data | get-tree 
+    | get-item "Package: Data/Package: Datatypes/Data: URL123" | get-property caption | equals "Data: URL123" 
+    | verify-true
+with [get-editor "Overview (NewWFModel.workflow)" | get-group Processes | get-tree] {
+    select "Activity: Diagram1"
+    get-item "Activity: Diagram1" | click
+    select "Activity: Diagram1" | double-click
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

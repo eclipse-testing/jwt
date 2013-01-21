@@ -1,0 +1,121 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Contexts: _KgB1kGCLEeKhj7ypbQffOQ,_7Rw1MGFGEeKLnJD_2PY7ug,_R9zp8GE0EeKLnJD_2PY7ug
+Element-Name: Export Model to STP-IM
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _wrFX8GOXEeKLnJD_2PY7ug
+Save-Time: 1/21/13 1:58 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+TEST STEPS
+
+1. Press External/Export button;
+2. Set file location and select "Export to STP-IM" transformation;
+3. Check "Open created file" option;
+4. Click Finish;
+5.  Make sure that created file is opened and verify that it contains STP-IM. 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-button External | click -arrow
+get-menu Export | click
+with [get-window -from "Window.createShell()"] {
+    get-group Transformation | get-combo | select "Export JWT to STP-IM"
+    get-group "Output File" | get-button "Open created file" | click
+}
+set-dialog-result File "platform:/resource/MyProject/exportedModel"
+with [get-window -from "Window.createShell()"] {
+    get-group "Output File" | get-button Browse | click
+    get-button Finish | click
+}
+get-editor exportedModel | get-editbox | get-property text | equals "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n"
+    + "<xmi:XMI xmi:version=\"2.0\" xmlns:xmi=\"http://www.omg.org/XMI\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:im=\"http://eclipse.org/stp/im\">\n"
+    + "  <im:Owner owns=\"/2/@serviceCollection/@services.0\"/>\n"
+    + "  <im:ServiceBinding name=\"URL123\">\n"
+    + "    <properties key=\"DataType\">\n"
+    + "      <value xsi:type=\"im:BasicProperty\" key=\"DataType\" value=\"URL\"/>\n"
+    + "    </properties>\n"
+    + "    <properties key=\"InformationType\">\n"
+    + "      <value xsi:type=\"im:BasicProperty\" key=\"InformationType\"/>\n"
+    + "    </properties>\n"
+    + "  </im:ServiceBinding>\n"
+    + "  <im:StpIntermediateModel>\n"
+    + "    <properties key=\"author\">\n"
+    + "      <value xsi:type=\"im:BasicProperty\" key=\"author\" value=\"xored\"/>\n"
+    + "    </properties>\n"
+    + "    <properties key=\"version\">\n"
+    + "      <value xsi:type=\"im:BasicProperty\" key=\"version\" value=\"1.0\"/>\n"
+    + "    </properties>\n"
+    + "    <properties key=\"description\">\n"
+    + "      <value xsi:type=\"im:BasicProperty\" key=\"description\"/>\n"
+    + "    </properties>\n"
+    + "    <properties key=\"fileversion\">\n"
+    + "      <value xsi:type=\"im:BasicProperty\" key=\"fileversion\" value=\"1.2.0\"/>\n"
+    + "    </properties>\n"
+    + "    <processCollection>\n"
+    + "      <processes name=\"SimpleProcess\">\n"
+    + "        <properties key=\"TotalExecutionTime\">\n"
+    + "          <value xsi:type=\"im:BasicProperty\" key=\"TotalExecutionTime\" value=\"0\"/>\n"
+    + "        </properties>\n"
+    + "        <steps name=\"Final Node\" targetTransitions=\"/2/@processCollection/@processes.0/@transitions.1\">\n"
+    + "          <properties key=\"NodeType\">\n"
+    + "            <value xsi:type=\"im:BasicProperty\" key=\"NodeType\" value=\"Final Node\"/>\n"
+    + "          </properties>\n"
+    + "        </steps>\n"
+    + "        <steps name=\"Initial Node\" sourceTransitions=\"/2/@processCollection/@processes.0/@transitions.0\">\n"
+    + "          <properties key=\"NodeType\">\n"
+    + "            <value xsi:type=\"im:BasicProperty\" key=\"NodeType\" value=\"Initial Node\"/>\n"
+    + "          </properties>\n"
+    + "        </steps>\n"
+    + "        <steps serviceModel=\"/2/@serviceCollection/@services.0\" name=\"Action1\" sourceTransitions=\"/2/@processCollection/@processes.0/@transitions.1\" targetTransitions=\"/2/@processCollection/@processes.0/@transitions.0\" stepbindings=\"/1\">\n"
+    + "          <properties key=\"NodeType\">\n"
+    + "            <value xsi:type=\"im:BasicProperty\" key=\"NodeType\" value=\"Action\"/>\n"
+    + "          </properties>\n"
+    + "          <properties key=\"function\">\n"
+    + "            <value xsi:type=\"im:BasicProperty\" key=\"function\"/>\n"
+    + "          </properties>\n"
+    + "          <properties key=\"targetexecutiontime\">\n"
+    + "            <value xsi:type=\"im:BasicProperty\" key=\"targetexecutiontime\" value=\"0\"/>\n"
+    + "          </properties>\n"
+    + "          <properties key=\"role\">\n"
+    + "            <value xsi:type=\"im:BasicProperty\" key=\"role\" value=\"TestRole\"/>\n"
+    + "          </properties>\n"
+    + "          <properties key=\"organisationunit\">\n"
+    + "            <value xsi:type=\"im:BasicProperty\" key=\"organisationunit\"/>\n"
+    + "          </properties>\n"
+    + "        </steps>\n"
+    + "        <transitions source=\"/2/@processCollection/@processes.0/@steps.1\" target=\"/2/@processCollection/@processes.0/@steps.2\"/>\n"
+    + "        <transitions source=\"/2/@processCollection/@processes.0/@steps.2\" target=\"/2/@processCollection/@processes.0/@steps.0\"/>\n"
+    + "      </processes>\n"
+    + "    </processCollection>\n"
+    + "    <serviceCollection>\n"
+    + "      <services is_owned=\"/0\" serviceName=\"InternetBrowser\" bindings=\"/1\">\n"
+    + "        <properties key=\"IsWebServiceApplication\">\n"
+    + "          <value xsi:type=\"im:BasicProperty\" key=\"IsWebServiceApplication\" value=\"False\"/>\n"
+    + "        </properties>\n"
+    + "        <properties key=\"jarArchive\">\n"
+    + "          <value xsi:type=\"im:BasicProperty\" key=\"jarArchive\"/>\n"
+    + "        </properties>\n"
+    + "        <properties key=\"javaClass\">\n"
+    + "          <value xsi:type=\"im:BasicProperty\" key=\"javaClass\" value=\"eu.emundo.agilpro.fw.fe.intf.BrowserUi\"/>\n"
+    + "        </properties>\n"
+    + "        <properties key=\"method\">\n"
+    + "          <value xsi:type=\"im:BasicProperty\" key=\"method\"/>\n"
+    + "        </properties>\n"
+    + "        <properties key=\"applicationtype\">\n"
+    + "          <value xsi:type=\"im:BasicProperty\" key=\"applicationtype\"/>\n"
+    + "        </properties>\n"
+    + "      </services>\n"
+    + "    </serviceCollection>\n"
+    + "  </im:StpIntermediateModel>\n"
+    + "</xmi:XMI>" | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

@@ -1,0 +1,48 @@
+--- Q7 testcase ---
+Format-Version: 1.0
+Q7-vendor: www.xored.com/q7
+Contexts: _KgB1kGCLEeKhj7ypbQffOQ,_7Rw1MGFGEeKLnJD_2PY7ug,_R9zp8GE0EeKLnJD_2PY7ug
+Element-Name: Export Model to XPDL
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _-Ta14GOXEeKLnJD_2PY7ug
+Save-Time: 1/21/13 2:04 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+TEST STEPS
+
+1. Press External/Export button;
+2. Set file location and select "Export to XPDL" transformation;
+3. Check "Open created file" option;
+4. Click Finish;
+5.  Make sure that created file is opened and verify that it contains XPDL. 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-button External | click -arrow
+get-menu Export | click
+get-window -from "Window.createShell()" | get-group Transformation | get-combo | select "Export JWT to XPDL"
+set-dialog-result File "platform:/resource/MyProject/exportedModel"
+with [get-window -from "Window.createShell()"] {
+    with [get-group "Output File"] {
+        get-button Browse | click
+        get-button "Open created file" | click
+    }
+    get-button Finish | click
+}
+
+get-editor exportedModel | get-editbox | get-property text 
+    | contains "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Package xmlns=\"http://www.wfmc.org/2002/XPDL1.0\" xmlns:jwt2xpdl=\"http://xml.apache.org/xalan/java/org.eclipse.jwt.transformations.xslt.tools.CustomXslFunctions\" xmlns:processes=\"org.eclipse.jwt/processes\" xmlns:organisations=\"org.eclipse.jwt/organisations\" xmlns:data=\"org.eclipse.jwt/data\" xmlns:core=\"org.eclipse.jwt/core\" xmlns:xmi=\"http://www.omg.org/XMI\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xpdl=\"http://www.wfmc.org/2002/XPDL1.0\" Name=\"SimpleProcess\" Id=\"SimpleProcess\" xsi:schemaLocation=\"http://www.wfmc.org/2002/XPDL1.0 http://wfmc.org/standards/docs/TC-1025_schema_10_xpdl.xsd\">\n"
+    + "<PackageHeader>\n"
+    + "<XPDLVersion>1.0</XPDLVersion>\n"
+    + "<Vendor>JWT</Vendor>\n"
+    | verify-true
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
