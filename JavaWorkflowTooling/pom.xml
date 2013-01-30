@@ -1,0 +1,48 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>q7.JWT</groupId> 
+  <artifactId>q7.JWT.tests</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>q7test</packaging>
+ 
+  <pluginRepositories>
+    <pluginRepository>
+      <id>q7-releases</id>
+      <name>Xored Q7 Maven repository</name>
+      <url>http://maven.xored.com/nexus/content/repositories/q7-releases/</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>q7-snapshots</id>
+      <name>Xored Q7 Maven repository</name>
+      <url>http://maven.xored.com/nexus/content/repositories/q7-snapshots</url>
+    </pluginRepository>
+  </pluginRepositories>
+   
+  <properties>
+    <q7-maven-version>1.2.14-SNAPSHOT</q7-maven-version>
+    <q7-runner-version>1.2.14-SNAPSHOT</q7-runner-version>
+  </properties> 
+ 
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.xored.q7</groupId>
+        <artifactId>q7-maven-plugin</artifactId>
+        <version>${q7-maven-version}</version>
+        <extensions>true</extensions>
+        <configuration>
+        <aut>
+  			<explicit>C:\Users\Ulyana\Downloads\EclipseWithJWT.zip</explicit>
+		</aut>
+		<q7>
+			<version>${q7-runner-version}</version>
+		</q7>
+		
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+  
+  
+</project>
